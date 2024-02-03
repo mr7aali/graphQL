@@ -8,12 +8,20 @@ type Product{
         price:Float
         quantity:Int
         onStock:Boolean
-        categoryId:String
+        category:Category
 }
+
+type Category{
+    id:ID!
+    name:String
+}
+
 
 type Query{
   products:[Product]
   product(productID:ID!):Product
+  categories:[Category]
+  category(categoryId:ID!):Category
 }
 
  
