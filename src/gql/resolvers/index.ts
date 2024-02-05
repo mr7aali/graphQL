@@ -14,10 +14,14 @@ export const resolvers = {
         }
     },
     Product: {
-        category: (parent, args, context) => {
-          console.log(parent);
-          const result = db.categories.find(category=>category.id === parent.categoryId);
-          return result
+        category: (parent: any, args, context: any) => {
+            const result = db.categories.find(category => category.id === parent.categoryId);
+            return result
+        }
+    },
+    Category: {
+        products: (parent: any, args, context: any) => {
+            return db.products.filter(Item=>Item.categoryId === parent.id);
         }
     }
 };

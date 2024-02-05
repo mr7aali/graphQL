@@ -14,6 +14,7 @@ type Product{
 type Category{
     id:ID!
     name:String
+    products:[Product]
 }
 
 
